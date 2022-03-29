@@ -7,7 +7,7 @@ namespace DSStacksandQueues
 
     public class My_Stack<Gtype>
     {/// <summary>
-    /// UC1 - Create a stack 
+    /// UC2 - Create a stack, peak, pop, till stack is empty
     /// </summary
 
         //variable
@@ -46,6 +46,40 @@ namespace DSStacksandQueues
                 temp_top = temp_top.next;
             }
             Console.WriteLine(temp_top.value);
+        }
+
+        public Gtype Peak()
+        {
+            return top.value;  
+        }
+
+        public Gtype Pop()
+        {
+            if (IsEmpty())
+            {
+                Console.WriteLine("Stack is Empty");
+                return default(Gtype);
+            }
+            //stack has one element  --> remove the element
+            else if (top.next is null)
+            {
+
+                top = null;
+
+            }
+            else // remove top and assign top as  next element 
+            {
+
+                top = top.next;
+
+            }
+            return default(Gtype);
+        }
+
+        public bool IsEmpty()
+        {
+            if (top is null) return true;
+            else return false;
         }
     }
 }

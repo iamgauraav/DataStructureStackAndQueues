@@ -14,6 +14,12 @@ namespace DSStacksandQueues
             my_Stack.push(30);
             my_Stack.push(56);
             my_Stack.Show();
+            my_Stack.Peak();
+            my_Stack.Pop();
+            //my_Stack.IsEmpty();
+            my_Stack.Show();
+
+
         } 
     }
 }
