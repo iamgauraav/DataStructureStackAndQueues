@@ -8,16 +8,14 @@ namespace DSStacksandQueues
     {
         static void Main(string[] args)
         {
-            My_Stack<int> my_Stack = new My_Stack<int>();
+            My_Queue<int> my_Queue = new My_Queue<int>();
 
-            my_Stack.push(70);
-            my_Stack.push(30);
-            my_Stack.push(56);
-            my_Stack.Show();
-            my_Stack.Peak();
-            my_Stack.Pop();
-            //my_Stack.IsEmpty();
-            my_Stack.Show();
+            my_Queue.Enqueue(56);
+            my_Queue.Enqueue(30);
+            my_Queue.Enqueue(70);
+            my_Queue.show();
+
+
 
 
         } 

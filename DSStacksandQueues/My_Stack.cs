@@ -5,81 +5,52 @@ namespace DSStacksandQueues
 /// Template for testing stack and queue
 /// </summary>
 
-    public class My_Stack<Gtype>
+    public class My_Queue<Gtype>
     {/// <summary>
-    /// UC2 - Create a stack, peak, pop, till stack is empty
-    /// </summary
+     /// UC3 - create a Queue  
+     /// </summary
 
-        //variable
-        Node<Gtype> top;
+        Node<Gtype> front;
+        Node<Gtype> rare;
 
-        //using Constructor
-        public My_Stack()
+
+        public void Enqueue(Gtype data)
         {
-            this.top = null;
-        }
-
-        public void push(Gtype data)
-        {
-            //Created node
+            //creating node with given data
             Node<Gtype> node = new Node<Gtype>(data);
-            //If top is null mark it as node,there is no linking
-            if (top is null)
+
+            //if the given element is first element
+            //front element = rare element
+            //we can check anyone either front or rare
+            if (rare is null)
             {
-                top = node;
+                front = node;
+                rare = node;
             }
-            else //make new node--> link with top---> mark it top
+            else
             {
-                node.next = top;
-                top = node;
+                rare.next = node;
+                rare = node;
             }
         }
 
-        public void Show()
+        public void show()
         {
-            //start from top and traverse upto top
-            Node<Gtype> temp_top = top;
-
-            while (temp_top.next != null)
+            //Created a temp variable
+            Node<Gtype> temp = front;
+            //traverse from front to last element and print element
+            if (temp is null) Console.WriteLine("Queue is Empty");
+            else
             {
-                Console.Write(temp_top.value + " ");
-                temp_top = temp_top.next;
+                while (temp.next != null)
+                {
+                    Console.Write(temp.value + " ");
+                    temp = temp.next;
+                }
+                //to print the last value
+                Console.WriteLine(temp.value);
             }
-            Console.WriteLine(temp_top.value);
         }
 
-        public Gtype Peak()
-        {
-            return top.value;  
-        }
-
-        public Gtype Pop()
-        {
-            if (IsEmpty())
-            {
-                Console.WriteLine("Stack is Empty");
-                return default(Gtype);
-            }
-            //stack has one element  --> remove the element
-            else if (top.next is null)
-            {
-
-                top = null;
-
-            }
-            else // remove top and assign top as  next element 
-            {
-
-                top = top.next;
-
-            }
-            return default(Gtype);
-        }
-
-        public bool IsEmpty()
-        {
-            if (top is null) return true;
-            else return false;
-        }
     }
 }
