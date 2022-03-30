@@ -14,6 +14,10 @@ namespace DSStacksandQueues
             my_Queue.Enqueue(30);
             my_Queue.Enqueue(70);
             my_Queue.show();
+            my_Queue.Dequeue();
+            my_Queue.show();
+            my_Queue.ISEmpty();
+            my_Queue.show();
 
 
 
